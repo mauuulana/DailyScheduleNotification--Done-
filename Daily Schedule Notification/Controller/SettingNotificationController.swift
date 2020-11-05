@@ -25,7 +25,7 @@ class SettingNotificationController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        switcherNotif.setOn(true, animated: false)
+        switcherNotif.isOn = true
         timeNotif = protocolTime?.timeSelected
         labelTime.text = timeNotif
         showPicker()
@@ -54,9 +54,6 @@ class SettingNotificationController: UIViewController {
         dateFormatter.dateFormat = "HH:mm"
         let time = dateFormatter.date(from: timeNotif!)
         pickerChangeTime.date = time!
-        
-        pickerChanged()
-        print("\(hour ?? 0)\(minute ?? 0)\(timeNotif ?? "00:00")")
 
         toolBar.setItems([spaceButton, spaceButton, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
@@ -74,8 +71,11 @@ class SettingNotificationController: UIViewController {
     
     @objc func donePickerTimes() {
         pickerChanged()
-        print("\(hour ?? 0)\(minute ?? 0)\(timeNotif ?? "00:00")")
-        checkState()
+        if stateOn == true {
+            notification.cancelNotification(identifierName: "dailyReminder")
+            
+            notification.addScheduledNotification(identifier: "dailyReminder", title: "Daily Reminder", body: "Coba-Coba", hour: hour!, minute: minute!)
+        }
         tapChangeTimeNotif.resignFirstResponder()
         labelTime.text = timeNotif
     }
@@ -83,21 +83,9 @@ class SettingNotificationController: UIViewController {
     @IBAction func switcherChanged(_ sender: UISwitch) {
         if switcherNotif.isOn == true {
             stateOn = true
-            switcherNotif.setOn(true, animated: true)
-            checkState()
-        } else {
-            stateOn = false
-            switcherNotif.setOn(false, animated: true)
-            checkState()
-        }
-    }
-    
-    func checkState() {
-        if stateOn == true {
-            notification.cancelNotification(identifierName: "dailyReminder")
-            
             notification.addScheduledNotification(identifier: "dailyReminder", title: "Daily Reminder", body: "Coba-Coba", hour: hour ?? 0, minute: minute ?? 0)
         } else {
+            stateOn = false
             notification.cancelNotification(identifierName: "dailyReminder")
         }
     }

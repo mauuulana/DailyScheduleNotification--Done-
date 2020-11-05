@@ -70,12 +70,11 @@ class SetTimeNotifController: UIViewController, ProtocolTimeNotif {
         hour = Int(arrayTimes[0])
         minute = Int(arrayTimes[1])
         timeSelected = arrayTimes[2]
-        print("\(hour ?? 0)\(minute ?? 0)\(timeSelected ?? "00:00")")
     }
 
     @IBAction func nextButton(_ sender: UIButton) {
         //Set Notification
-        notification.addScheduledNotification(identifier: "dailyReminder", title: "Daily Reminder", body: "Coba-Coba", hour: hour ?? 0, minute: minute ?? 0)
+        notification.addScheduledNotification(identifier: "dailyReminder", title: "Daily Reminder", body: "Coba-Coba", hour: hour!, minute: minute!)
         
         performSegue(withIdentifier: "toSettingNotif", sender: nil)
     }

@@ -48,7 +48,8 @@ class NotificationHelper {
                   identifiers.append(notification.identifier)
                }
            }
-           UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
+            print("Cancel")
         }
     }
 }

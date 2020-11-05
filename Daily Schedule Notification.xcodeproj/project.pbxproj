@@ -14,6 +14,7 @@
 		D9C3F8B92553BA1F00E785B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9C3F8B82553BA1F00E785B2 /* Assets.xcassets */; };
 		D9C3F8BC2553BA1F00E785B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C3F8BA2553BA1F00E785B2 /* LaunchScreen.storyboard */; };
 		D9C3F8CC2553D0C000E785B2 /* SettingNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C3F8CB2553D0C000E785B2 /* SettingNotificationController.swift */; };
+		D9C3F8D02553D2C200E785B2 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C3F8CF2553D2C200E785B2 /* NotificationHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D9C3F8BB2553BA1F00E785B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9C3F8BD2553BA1F00E785B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9C3F8CB2553D0C000E785B2 /* SettingNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNotificationController.swift; sourceTree = "<group>"; };
+		D9C3F8CF2553D2C200E785B2 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,10 +90,19 @@
 		D9C3F8C92553CE0D00E785B2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D9C3F8CE2553D23400E785B2 /* Supporting */,
 				D9C3F8B32553BA1C00E785B2 /* SetTimeNotifController.swift */,
 				D9C3F8CB2553D0C000E785B2 /* SettingNotificationController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		D9C3F8CE2553D23400E785B2 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				D9C3F8CF2553D2C200E785B2 /* NotificationHelper.swift */,
+			);
+			path = Supporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9C3F8B42553BA1C00E785B2 /* SetTimeNotifController.swift in Sources */,
+				D9C3F8D02553D2C200E785B2 /* NotificationHelper.swift in Sources */,
 				D9C3F8B02553BA1C00E785B2 /* AppDelegate.swift in Sources */,
 				D9C3F8B22553BA1C00E785B2 /* SceneDelegate.swift in Sources */,
 				D9C3F8CC2553D0C000E785B2 /* SettingNotificationController.swift in Sources */,

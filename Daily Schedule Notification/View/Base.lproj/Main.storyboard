@@ -28,9 +28,12 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="MtI-tG-ywk">
                                         <rect key="frame" x="47" y="67.5" width="320" height="298"/>
                                         <subviews>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="axU-Pa-8DP">
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="axU-Pa-8DP">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
                                                 <locale key="locale" localeIdentifier="id"/>
+                                                <connections>
+                                                    <action selector="pickerChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZES-7l-exf"/>
+                                                </connections>
                                             </datePicker>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3Q-eb-x3E">
                                                 <rect key="frame" x="40" y="248" width="240" height="50"/>
@@ -117,6 +120,9 @@
                                                                     </label>
                                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nlh-fR-Uge">
                                                                         <rect key="frame" x="293" y="0.0" width="51" height="31"/>
+                                                                        <connections>
+                                                                            <action selector="switcherChanged:" destination="LSp-fQ-CRw" eventType="valueChanged" id="ayu-Wm-kIv"/>
+                                                                        </connections>
                                                                     </switch>
                                                                 </subviews>
                                                             </stackView>
@@ -219,6 +225,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="labelTime" destination="PZN-dE-0NL" id="plS-sz-MvY"/>
                         <outlet property="switcherNotif" destination="Nlh-fR-Uge" id="0Ud-pK-32U"/>
                         <outlet property="tapChangeTimeNotif" destination="Su0-JQ-k3g" id="asE-hP-pPJ"/>
                     </connections>

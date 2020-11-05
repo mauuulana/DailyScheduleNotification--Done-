@@ -21,7 +21,7 @@ class SetTimeNotifController: UIViewController, ProtocolTimeNotif {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        notification.requestNotificationPermission()
+        notification.requestNotificationPermission() // to triggered permission privacy notifications
     }
     
     // When select time to separate hours and minutse, then case the hour on device when using not 24 hours to force the hours result using 24 hours format
@@ -57,7 +57,7 @@ class SetTimeNotifController: UIViewController, ProtocolTimeNotif {
         return array
     }
     
-    //Pass data
+    //Pass data from protocol
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSettingNotif" {
             settingNotif = segue.destination as? SettingNotificationController
@@ -65,6 +65,7 @@ class SetTimeNotifController: UIViewController, ProtocolTimeNotif {
         }
     }
     
+    //When picker change time
     @IBAction func pickerChange(_ sender: UIDatePicker) {
         arrayTimes = selectPickerTime(picker: pickerTime)
         hour = Int(arrayTimes[0])
@@ -76,6 +77,7 @@ class SetTimeNotifController: UIViewController, ProtocolTimeNotif {
         //Set Notification
         notification.addScheduledNotification(identifier: "dailyReminder", title: "Daily Reminder", body: "Coba-Coba", hour: hour!, minute: minute!)
         
+        //move next page
         performSegue(withIdentifier: "toSettingNotif", sender: nil)
     }
 }

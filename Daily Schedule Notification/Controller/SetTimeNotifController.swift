@@ -66,7 +66,7 @@ class SetTimeNotifController: UIViewController, ProtocolTimeNotif {
     }
     
     //When picker change time
-    @IBAction func pickerChange(_ sender: UIDatePicker) {
+    @IBAction func pickerChanged(_ sender: UIDatePicker) {
         arrayTimes = selectPickerTime(picker: pickerTime)
         hour = Int(arrayTimes[0])
         minute = Int(arrayTimes[1])

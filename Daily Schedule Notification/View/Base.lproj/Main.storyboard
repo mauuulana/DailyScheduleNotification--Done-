@@ -32,7 +32,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
                                                 <locale key="locale" localeIdentifier="id"/>
                                                 <connections>
-                                                    <action selector="pickerChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZES-7l-exf"/>
+                                                    <action selector="pickerChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZES-7l-exf"/>
                                                 </connections>
                                             </datePicker>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3Q-eb-x3E">

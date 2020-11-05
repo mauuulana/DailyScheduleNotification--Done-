@@ -7,13 +7,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SetTimeNotifController: UIViewController {
 
+    @IBOutlet weak var pickerTime: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
-
+    @IBAction func nextButton(_ sender: UIButton) {
+        
+    }
 }
 
